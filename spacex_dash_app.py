@@ -73,6 +73,7 @@ def get_pie_chart(entered_site):
 
 def get_scatter_chart(entered_site, payload_slider_range):
     filtered_df = spacex_df
+    features = filtered_df[['Launch Site', 'class']]
     low, high = payload_slider_range
     mask = ((filtered_df['Payload Mass (kg)'] > low) & (filtered_df['Payload Mass (kg)'] < high))
     if entered_site == "All Sites":
